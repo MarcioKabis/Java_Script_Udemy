@@ -11,41 +11,33 @@
 
     <h1>funcoes - tabuada</h1>
 
-    <button onclick = "mostrarTabuada()">Mostrar Tabuada</button><button onclick="limparTabuada()">Limpar Tabuada</button>
+    <button onclick = "mostrarTabuada()">Mostrar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
     <div id="output"></div>
 
     <script>
-        
         const output = document.getElementById("output")
-
-       
+        
         function mostrarTabuada(){
-         
-            //pedir para o usuario digitar um numero
+            let msg = ""
             let n = parseFloat(prompt("digite um numero"))
 
-
-            let msg = ""
-            for (var i = 0;i <=1000; i++) {
+            for (let i = 0;i <=1000; i++) {
+                if(i === 10) {
+                    break
+                }
                 msg +=  `${n} x ${i} = ${(n*i)}<br>`
             }
-            // let i = 0;
-            // while (i <= 1000) {
-            //       msg +=  `${n} x ${i} = ${(n*i)}<br>`
-            //       i++
-            // }
-
             output.innerHTML = msg
-            // mostrar a tabuada desse numero de 1 a 1000.
-
-            //toda informação que vem da interface do usuario é string
-
+           
         }
 
         function limparTabuada(){
-        output.innerHTML=""
+            output.innerHTML=""
         }
-        
+
+
+
     </script>
 </body>
 </html>
